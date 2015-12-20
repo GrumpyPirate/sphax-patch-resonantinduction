@@ -1,9 +1,6 @@
-Assets/
-Previews/
-Original/
 node_modules/
 
-!Source/**
-!Compiled\ Size\ Packs/**
+!src/**
+!compiled/**
 
 .DS_Store

@@ -4,8 +4,8 @@
 // Paths for file assets
 // -----------------------------------------------------------------------------
 var paths = {
-		src:  'Source/',
-		dest: 'Compiled Size Packs/'
+		src:  'src/',
+		dest: 'compiled/'
 	},
 	// custom plugin settings
 	// -----------------------------------------------------------------------------
@@ -23,7 +23,7 @@ var paths = {
 	// Patch name
 	patchName = 'NoPatchName',
 	// Define versions to process
-	versions = ['1.6.4', '1.7.10'],
+	versions = ['1.6.4'],
 	// Suffix to add onto created size pack directories
 	suff = 'x',
 	// Initial size of source images (should be 512px)
@@ -113,7 +113,7 @@ gulp.task('optimise', function () {
 			filterResizeables = $.filter([
 				'**/*.png',
 				// By default, don't resize GUIs or fonts
-				'!**/{gui,guis,font,fonts}/**/*.png',
+				'!**/{gui,guis}/**/*.png',
 				'!**/pack.png'
 			], { restore: true }),
 			// Apply threshold filter to these files:
