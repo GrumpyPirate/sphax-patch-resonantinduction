@@ -61,12 +61,28 @@ var paths = {
 /* -----------------------------------------------------------------------------
  * Core logic below, only edit the below if you're brave/bored/interested
  * -------------------------------------------------------------------------- */
+/* -----------------------------------------------------------------------------
+ * GULP PLUGINS
+ * -------------------------------------------------------------------------- */
+// Gulp + plugins
+var gulp = require('gulp'),
+    $ = require('gulp-load-plugins')({
+        pattern: '*',
+        scope: ['dependencies', 'devDependencies'],
+        camelize: true
+    }),
+// Node core modules
+    path = require('path'),
+    fs = require('fs'),
+// Get command line args
+    args = $.minimist(process.argv.slice(2));
+
 // custom plugin settings
 // -----------------------------------------------------------------------------
 var settings = {
         imagemin: {
             // Default is 2 (8 trials)
-            optimizationLevel: 3,
+            optimizationLevel: 5,
             keepBitDepth: false,
             keepColorType: true,
             keepPalette: false,
@@ -93,23 +109,6 @@ var settings = {
 
         return a;
     })();
-
-
-/* -----------------------------------------------------------------------------
- * GULP PLUGINS
- * -------------------------------------------------------------------------- */
-// Gulp + plugins
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')({
-        pattern: '*',
-        camelize: true
-    }),
-// Node core modules
-    path = require('path'),
-    fs = require('fs'),
-// Get command line args
-    args = $.minimist(process.argv.slice(2));
-
 
 /* -----------------------------------------------------------------------------
  * GLOBAL FUNCTIONS
