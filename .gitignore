@@ -3,4 +3,10 @@ node_modules/
 !src/**
 !compiled/**
 
+# OS
+.db
 .DS_Store
+
+# Node
+node_modules/
+npm-debug.log
